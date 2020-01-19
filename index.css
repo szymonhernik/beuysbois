@@ -1,0 +1,63 @@
+body {
+  background-image: url('image/bg/Artboard 5.jpg');
+  background-size: cover;
+}
+#b1 { background: url('image/bg/Artboard 5.jpg'); background-size: cover;}
+#b2 { background: url('image/bg/Artboard 6.jpg'); background-size: cover;}
+#b3 { background: url('image/bg/Artboard 7.jpg'); background-size: cover;}
+#b4 { background: url('image/bg/Artboard 8.jpg'); background-size: cover;}
+#b5 { background: url('image/bg/Artboard 9.jpg'); background-size: cover;}
+
+
+.topbar {
+  overflow: hidden;
+  background-color: white;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  left: -3px;
+  width: 100%; /* Full width */
+  height: 40px;
+}
+
+ul {
+  list-style-type: none;
+  list-style:none;
+  margin: 0;
+  padding: 70px;
+  color: black;
+  font-family: 'helvatica', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  list-style-position:outside;
+}
+
+.bg-img {
+  width: 100%;
+  padding: 10% 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.tech-slideshow {
+  padding-top: 0em;
+  max-width: 00px;
+  width: 100%;
+  height: 30px;
+  max-height: 200%;
+  margin: 0 auto;
+  /* position: relative; */
+  /* overflow: hidden; */
+  /* transform: translate3d(0, 0, 0); */
+  /* animation: moveSlideshow 1s linear infinite; */
+}
+.tech-slideshow  > img {
+    height: 100%;
+    /* width: 100%; */
+    animation: moveSlideshow 5s linear infinite;
+}
+
+@keyframes moveSlideshow {
+  100% {
+    transform: translateX(-66%);
+  }
+}
