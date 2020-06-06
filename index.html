@@ -1,36 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <title>BIRD</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 
-  <title>beuysbois</title>
 
-  <!-- include stylesheets here -->
-  <link rel="stylesheet" href="index.css" />
+  <!-- Sources -->
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+
 
 </head>
-<body>
 
-<div class="topbar">
+<body >
+
+  <div class="hover-space"></div>
+
+  <!-- <h1 class="message">
+    Still and still loading///sorryy
+  </h1> -->
+
+  <div class="animation">
+    <video id="before-loaded" class="video-styles" width="100%" height="100%" autoplay="autoplay" muted>
+      <source src="images/Replace.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <video id="opening-video" class="hide" width="100%" height="100%" autoplay="autoplay" muted>
+      <source src="images/Main.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <main>
+    <div class="background-element">
+      <img id="bg-img" data-src="images/art/" src="images/art/1.jpg" alt="">
+
+    </div>
+    <!-- <nav class="navigation"> -->
+    <nav class="navigation">
+      <ul>
+        <li data-section="about" id="nav-elem"><h1>ab<span class="nav">o</span><span class="nav">u</span>t</h1></li>
+        <li data-section="archive" id="nav-elem"><h1>arch<span class="nav">i</span>ve<span class="nav">s</span></h1></li>
+        <li data-section="events" id="nav-elem"><h1><span class="nav">e</span>v<span class="nav">e</span>nt<span class="nav">s</span></h1></li>
+        <li data-section="open-call" id="nav-elem"><h1><span class="nav">o</span>p<span class="nav">e</span>n call</h1></li>
+        <li data-section="food" id="nav-elem"><h1>f<span class="nav">o</span><span class="nav">o</span>d</h1></li>
+      </ul>
+    </nav>
+
+
+  </main>
+
+
+
+
+
+
+
+<div class="banner ">
+  <div id="logo-wrapper" class="wrapper">
+    <div id="logo-element" class="element"><img src="images/logo/logo-left-b.png" alt=""></div>
+    <div id="logo-element" class="element"><img src="images/logo/logo-right-b.png" alt=""></div>
+  </div>
 </div>
-
-<div class="tech-slideshow">
-    <img src="image/elements/banner.png">
+<div class="banner-first">
+  <img src="images/logo/banner2.png" alt="">
 </div>
+<nav class="navigation-top">
+  <ul>
+    <li data-section="about" id="nav-elem"><h1>ab<span class="nav">o</span><span class="nav">u</span>t</h1></li>
+    <li data-section="archive" id="nav-elem"><h1>arch<span class="nav">i</span>ve<span class="nav">s</span></h1></li>
+    <li data-section="events" id="nav-elem"><h1><span class="nav">e</span>v<span class="nav">e</span>nt<span class="nav">s</span></h1></li>
+    <!-- <li data-section="" id="nav-elem"><h1></h1></li> -->
+    <li data-section="open-call" id="nav-elem"><h1><span class="nav">o</span>p<span class="nav">e</span>n call</h1></li>
 
-<ul class="menu">
-  <li id="about"><a href="about.asp"><img src="image/menu/about.png"  height=70></a></li>
-  <li id="locations"><a href="locations.asp"><img src="image/menu/locations.png"  height=70></a></li>
-  <li id="archives"><a href="archives.asp"><img src="image/menu/archives.png" height=70></a></li>
-  <li id="events"><a href="events.asp"><img src="image/menu/events.png" height=70></a></li>
-  <li id="albums"><a href="albums.asp"><img src="image/menu/albums.png" height=70></a></li>
-  <li id="opencall"><a href="opencall.asp"><img src="image/menu/open call.png" height=70></a></li>
-</ul>
+    <li data-section="food" id="nav-elem"><h1>f<span class="nav">o</span><span class="nav">o</span>d</h1></li>
+  </ul>
+</nav>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="script.js"></script>
+<!-- ABOUT -->
+<section data-targetted-section="about" class="about hidden">
 
+
+
+  <!-- BLUR -->
+
+  <div class="container blured" style="position: absolute; top:0; left: 0;">
+
+    <ul class="top-el title" style="margin-left:-5vw !important; width: 20vw !important;">
+      <li><a id="" href="#" onclick="highlight">Play</a></li>
+      <li><a id="" href="#" class="highlight">Mute</a></li>
+    </ul>
+      <a href="" class="top-el"><img src="images/logo/logo.png" alt=""></a>
+
+
+    <div class="row moving title" style="margin-bottom: 10vh !important;">
+      <h2 class="title" id="target"><span class="title">beuys bois is a new art collective that teamed up with existing LGBTQ organisation The Hang-Out 070 to celebrate the LGBTQ arts in the Hague. Together we aim to make The Hague a little bit more queer. </span></h2>
+    </div>
+
+    <div class="row moving  ">
+      <h2 class="title" id="target"><span class="title">beuys bois​ was born out of great frustration. As artists with diverse and underrepresented backgrounds attending an art school that focuses on Western forms of art, alienation became a painful part of our practice. Parts of our cultural and societal inheritance were ignored or revised. The alienation we feel is a slice in the pie of greater societal problems. On the smallest level, being fundamentally misunderstood by a mentor may cause pain, on the largest level there are segments in the population that permanently live in economic, cultural and societal alienation. We are united to imagine a different kind of institution. An institution that dares to be radical about thought and theory.  </span></h2>
+
+    <div class="space "></div>
+      <h2 class="title" id="target" ><span class="title">We present a space where theory becomes practice, where people who experience alienation do not have to sit with the pain. We draw our inspiration from Queer Theory. The core concepts that guide our​ explorations are non-essentialism,​ ​non-normative and​ unfixing. </span></h2>
+    </div>
+
+
+
+  </div>
+  <!-- END OF BLUR -->
+
+  <!-- TEXT -->
+  <div class="container" style="position: absolute; top:0; left: 0;">
+
+    <ul class="top-el">
+      <li><a id="play-button" href="#">Play</a></li>
+      <li><a id="unmute-btn" href="#" class="highlight">Mute</a></li>
+    </ul>
+      <a href="" class="top-el"><img src="images/logo/logo.png" alt=""></a>
+
+    <div class="row">
+      <h2><span><span class="highlight italic">beuys bois</span> is a new art collective that teamed up with existing LGBTQ organisation <span class="italic">The Hang-Out 070</span> to celebrate the LGBTQ arts in the Hague. Together we aim to make The Hague a little bit more queer. </span></h2>
+    </div>
+
+    <div class="row">
+      <h2 ><span><span class="italic highlight">beuys bois</span>​ was born out of great frustration. As artists with diverse and underrepresented backgrounds attending an art school that focuses on Western forms of art, alienation became a painful part of our practice. Parts of our cultural and societal inheritance were ignored or revised. The alienation we feel is a slice in the pie of greater societal problems. On the smallest level, being fundamentally misunderstood by a mentor may cause pain, on the largest level there are segments in the population that permanently live in economic, cultural and societal alienation. We are united to imagine a different kind of institution. An institution that dares to be radical about thought and theory.  </span></h2>
+
+    <br>
+      <h2 ><span>We present a space where theory becomes practice, where people who experience alienation do not have to sit with the pain. We draw our inspiration from Queer Theory. The core concepts that guide our​ explorations are non-essentialism,​ ​non-normative and​ unfixing. </span></h2>
+    </div>
+
+    <div class="uncover"></div>
+
+    <div class="faces">
+      <div class="gradient"></div>
+      <video id="face-vid" class="" width="100%" height="100%" autoplay muted loop>
+        <source src="images/Web2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- END ABOUT -->
+
+<!-- ARCHIVE -->
+
+
+<section data-targetted-section="archive" class="about hidden">
+  <span>Archive</span>
+</section>
+
+
+
+
+
+
+
+<!--END ARCHIVES -->
+
+<!-- EVENTS -->
+
+
+
+
+
+<section data-targetted-section="events" class="about hidden"><span>Events</span></section>
+
+
+
+<!-- END EVENTS -->
+
+
+
+
+
+<!-- OPEN CALL -->
+
+<section data-targetted-section="open-call" class="about hidden"><span>Open call</span></section>
+
+
+<!-- END OPEN CALLL -->
+
+
+
+
+<!-- FOOD -->
+
+<section data-targetted-section="food" class="about hidden"><span>Food</span></section>
+
+
+<!-- END FOOD -->
+
+<script src="js/scripts.js"></script>
 
 </body>
 </html>
