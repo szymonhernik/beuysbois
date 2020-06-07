@@ -5,7 +5,7 @@ const vid = document.querySelector("#opening-video");
 let hoverRect = document.querySelector(".hover-space")
 
 
-vid.addEventListener("loadeddata", () => {
+vid.addEventListener("canplay", () => {
 
 
   //change text of the message if the main, "heavy" video has loaded
