@@ -5,33 +5,47 @@ const vid = document.querySelector("#opening-video");
 let hoverRect = document.querySelector(".hover-space")
 
 
-vid.addEventListener("canplay", () => {
+if(vid) {
+  vid.addEventListener("canplay", () => {
 
 
-  //change text of the message if the main, "heavy" video has loaded
-  // let loadingMessage = document.querySelector('.message');
-  // loadingMessage.innerHTML= "Loaded just hover"
+    //change text of the message if the main, "heavy" video has loaded
+    // let loadingMessage = document.querySelector('.message');
+    // loadingMessage.innerHTML= "Loaded just hover"
 
 
-  let el = document.querySelector('#before-loaded')
-  let newEl = document.querySelector('#opening-video')
+    let el = document.querySelector('#before-loaded')
+    let newEl = document.querySelector('#opening-video')
 
 
-  let counter = 0;
-  function counterUpdate() {
-    counter ++;
-  }
-  el.addEventListener('ended',counterUpdate,false);
+    let counter = 0;
+    function counterUpdate() {
+      counter ++;
+    }
+    el.addEventListener('ended',counterUpdate,false);
+    // let allSources = document.getElementById("face-vid").src;
 
-  hoverRect.addEventListener('mouseover', () => {
+    hoverRect.addEventListener('mouseover', () => {
+      // el.play();
+    });
 
-    hoverRect.classList.toggle("hide");
+    hoverRect.addEventListener('click', () => {
+
+      hoverRect.classList.toggle("hide");
 
 
-    let waitingTime = 4000;
-    if (counter==0) {
-      el.addEventListener('ended', myHandler,false);
-      function myHandler(e) {
+      let waitingTime = 4000;
+      if (counter==0) {
+        el.addEventListener('ended', myHandler,false);
+        function myHandler(e) {
+
+          newEl.classList.toggle("hide");
+          newEl.classList.toggle("video-styles");
+          el.parentNode.replaceChild(newEl, el);
+          setTimeout(showMenu,waitingTime);
+
+        }
+      } else if (counter==1) {
 
         newEl.classList.toggle("hide");
         newEl.classList.toggle("video-styles");
@@ -39,31 +53,24 @@ vid.addEventListener("canplay", () => {
         setTimeout(showMenu,waitingTime);
 
       }
-    } else if (counter==1) {
 
-      newEl.classList.toggle("hide");
-      newEl.classList.toggle("video-styles");
-      el.parentNode.replaceChild(newEl, el);
-      setTimeout(showMenu,waitingTime);
+      function showMenu () {
+        document.querySelector('main').style.visibility = "visible";
+        document.querySelector('.background-element').classList.add("opacityIn");
+        document.querySelector('nav').classList.add("scaleIn");
+        document.querySelector('.banner').classList.add("banner-animation");
 
-    }
-
-    function showMenu () {
-      document.querySelector('main').style.visibility = "visible";
-      document.querySelector('.background-element').classList.add("opacityIn");
-      document.querySelector('nav').classList.add("scaleIn");
-      document.querySelector('.banner').classList.add("banner-animation");
-
-      run(4000, 5);
+        run(4000, 5);
 
 
-      console.log(document.getElementById("bg-img").src);
-    }
+        console.log(document.getElementById("bg-img").src);
+      }
+
+    });
+
 
   });
-
-
-});
+}
 
 let bgImages = document.querySelectorAll("#bg-img")
 let arrayBgImages = Array.from(bgImages)
@@ -85,81 +92,86 @@ function run(interval, frames) {
 }
 
 
+//ABOUT SECTION
 
-  function showSection (elem) {
 
-    let targettedSections = document.querySelectorAll("section")
-    document.querySelectorAll('#logo-element').forEach(logoPart => {
-      logoPart.classList.remove("logoOpen");
+
+  let sectionAbout = document.getElementById("about-section");
+
+  if(sectionAbout) {
+    console.log("about");
+
+    document.querySelector('.banner').classList.add("banner-animation");
+
+    let faceVid = document.getElementById("face-vid");
+    let soundStatus = faceVid.muted;
+    let playStatus = faceVid.paused;
+    let unmuteButton = document.getElementById("unmute-btn");
+    unmuteButton.addEventListener("click", (e) => {
+      console.log("clicked")
+      e.preventDefault()
+      if (soundStatus) {
+        unmuteButton.classList.remove("highlight");
+        playButton.classList.add("highlight");
+        faceVid.muted = false;
+        soundStatus = false;
+
+      } else if (!soundStatus) {
+        unmuteButton.classList.add("highlight");
+        faceVid.muted = true;
+        soundStatus = true;
+      }
+
     })
 
-    targettedSections.forEach(section => {
-      let sectionMatching = section.getAttribute("data-targetted-section")
-      if (sectionMatching === elem) {
-        section.classList.toggle("hidden");
-      } else if (elem === "about") {
-        faceVid.play()
+    let playButton = document.getElementById('play-button');
+    playButton.addEventListener('click', (e) => {
+      unmuteButton.classList.remove("highlight");
+      playButton.classList.add("highlight");
+      e.preventDefault()
+      smoothScroll(document.getElementById('face-vid'))
+      faceVid.muted = false;
+      soundStatus = false;
+    })
+  }
+
+  let videoNames = document.querySelectorAll("#video-name")
+  function changeVideo(a) {
+        videoName.src=a;
+  }
+  let videoInView = document.getElementById("video-src")
+  let videocontainer = document.getElementById("face-vid")
+  videoNames.forEach(videoName => {
+
+    videoName.addEventListener("click", function(e){
+      e.preventDefault()
+      // console.log(e.target);
+      videoNames.forEach(videoNameInside => {
+        videoNameInside.classList.remove("current")
+      })
+
+      e.target.classList.add("current")
+      if(videoInView.getAttribute("data-src") === videoName.getAttribute("data-src")) {
+        return;
+      } else {
+
+        console.log("ss");
+        console.log(videoName.getAttribute("data-src"));
+        console.log(videoInView.getAttribute("data-src"));
+        videocontainer.pause();
+        videoInView.setAttribute('src', videoName.getAttribute("data-src"));
+        videoInView.setAttribute('data-src', videoName.getAttribute("data-src"));
+        videocontainer.load();
+        videocontainer.play();
+        document.getElementById("play-button").classList.add("highlight")
+        document.getElementById("unmute-btn").classList.remove("highlight")
+        videocontainer.muted=false;
       }
 
     });
-
-
-  }
-
-  function hideSection () {
-    document.querySelectorAll('#logo-element').forEach(logoPart => {
-      logoPart.classList.add("logoOpen");
-    })
-
-    let targettedSections = document.querySelectorAll("section")
-    targettedSections.forEach(section => {
-      section.classList.add("hidden");
-    });
-    faceVid.pause()
-  }
-
-  const navElements = document.querySelectorAll("#nav-elem");
-  navElements.forEach(element => {
-    // console.log(element);
-    element.addEventListener("click", () => {
-      let navElement = element.getAttribute("data-section")
-      console.log(navElement);
-      showSection(navElement)
-    })
-
   })
 
 
-  let faceVid = document.getElementById("face-vid");
-  let soundStatus = faceVid.muted;
-  let playStatus = faceVid.paused;
-  let unmuteButton = document.getElementById("unmute-btn");
-  unmuteButton.addEventListener("click", (e) => {
-    console.log("clicked")
-    e.preventDefault()
-    if (soundStatus) {
-      unmuteButton.classList.remove("highlight");
-      playButton.classList.add("highlight");
-      faceVid.muted = false;
-      soundStatus = false;
-
-    } else if (!soundStatus) {
-      unmuteButton.classList.add("highlight");
-      faceVid.muted = true;
-      soundStatus = true;
-    }
-
-  })
-
-  let playButton = document.getElementById('play-button');
-  playButton.addEventListener('click', (e) => {
-    unmuteButton.classList.remove("highlight");
-    playButton.classList.add("highlight");
-    e.preventDefault()
-    smoothScroll(document.getElementById('face-vid'))
-    faceVid.muted = false;
-    soundStatus = false;
-  })
 
 
   window.smoothScroll = function(target) {
@@ -184,16 +196,3 @@ function run(interval, frames) {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
-
-
-
-document.getElementById('logo-wrapper').addEventListener('click', () => {
- hideSection();
-})
-
-document.querySelector(".shroom").addEventListener("mouseover", function () {
-  document.querySelector(".nav-all-pages").classList.add("show-nav")
-})
-document.querySelector(".nav-all-pages").addEventListener("mouseleave", function () {
-  document.querySelector(".nav-all-pages").classList.remove("show-nav")
-})
