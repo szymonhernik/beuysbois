@@ -131,7 +131,7 @@ function run(interval, frames) {
       e.preventDefault()
       smoothScroll(document.querySelector('.faces'))
       faceVid.muted = false;
-      soundStatus = false;
+      faceVid.play();
     })
 
   }
