@@ -336,6 +336,12 @@ nav.navigation ul {
 .navigation-top h1 {
 
 }
+.navigation-top li a {
+  color: #A5A5A5;
+}
+.navigation-top li a.highlight {
+  color: #5c5a5a !important;
+}
 .navigation-top h1::before {
     display: block;
     content: attr(title);
@@ -391,7 +397,7 @@ nav.navigation ul {
     transform: translateX(-280.6666%);
   }
 }
-@keyframes banner {
+/* @keyframes banner {
     0% {
         top: -80px;
         transform: scale(1,0.5);
@@ -401,7 +407,7 @@ nav.navigation ul {
       top: 0px;
         transform: scale(1,1);
     }
-}
+} */
 .banner-first {
   z-index: 100;
   cursor: pointer;
@@ -431,12 +437,12 @@ nav.navigation ul {
   align-items: center;
   justify-content: center;
   box-shadow: -4px 1px 6px lightgrey;
-  top: -80px;
+  top:0px;
 
 }
 .banner-animation {
 
-  animation: banner 0.7s ease-out forwards;
+  /* animation: banner 0.7s ease-out forwards; */
 }
 .wrapper {
   /* margin-top: 80px; */
@@ -502,6 +508,7 @@ section.about {
 
 
 .container {
+  background-color: #e5e5ec;
   height:auto;
   width: 100%;
   /* position: relative; */
