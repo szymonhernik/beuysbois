@@ -129,10 +129,11 @@ function run(interval, frames) {
       unmuteButton.classList.remove("highlight");
       playButton.classList.add("highlight");
       e.preventDefault()
-      smoothScroll(document.getElementById('face-vid'))
+      smoothScroll(document.querySelector('.faces'))
       faceVid.muted = false;
       soundStatus = false;
     })
+
   }
 
   let videoNames = document.querySelectorAll("#video-name")
@@ -169,8 +170,8 @@ function run(interval, frames) {
       }
 
     });
-  })
 
+  })
 
 
 
@@ -195,4 +196,4 @@ function run(interval, frames) {
     }
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-}
+  }
