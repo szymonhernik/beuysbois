@@ -3,6 +3,10 @@
     src: url("../fonts/Alexandra.ttf")
 }
 @font-face {
+    font-family:"Concert";
+    src: url("../fonts/ConcertOne-Regular.ttf")
+}
+@font-face {
     font-family:"Helvetica-Bold";
     src: url("../fonts/HelveticaNeue-Bold.ttf") /* TTF file for CSS3 browsers */
 }
@@ -156,6 +160,11 @@ h1 {
   top:0;
   left:0;
 
+}
+
+.text-title {
+  font-family: Concert, sans-serif;
+  font-size: 1.2em;
 }
 
 .video-styles{
@@ -494,13 +503,17 @@ nav.navigation ul {
 
 /* A——————B——————O——————U——————T————————————————————————P——————A——————G——————E */
 
+section {
+  background-color: #e5e5ec;
+  min-height: 100vh;
+}
 section.about {
   /* position: absolute;
   left: 0;
   top:0; */
   width: 100vw;
   z-index: 2;
-  background-color: #e5e5ec;
+
   /* background-color: white; */
   width: 100vw;
   /* height: 100vh; */
@@ -511,10 +524,10 @@ section.about {
 
 
 .container {
-  background-color: #e5e5ec;
+  /* background-color: #e5e5ec; */
   height:auto;
   width: 100%;
-  /* position: relative; */
+  position: relative;
   margin-top: 100px;
   font-size: 1.2em;
   /* font-family: 'Helvetica-Regular', sans-serif; */
@@ -553,9 +566,13 @@ section.about {
 }
 
 .link {
+  cursor: pointer;
   font-style: italic;
   /* color: #686868 !important; */
   color: #A5A5A5 !important;
+}
+.link.highlight {
+  color: #686868 !important;
 }
 .link:hover{
   text-decoration: underline;
@@ -564,7 +581,22 @@ section.about {
 
 }
 
-.container .row:nth-child(3) {
+.section-bg {
+  position: absolute;
+  top:0;
+  left: 0;
+
+  height: 100vh;
+
+}
+
+.poster {
+
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container .row:nth-child(3).about-row {
   margin-top: 22vh;
   margin-bottom: 0;
 }
@@ -601,6 +633,19 @@ section.about {
   letter-spacing: .03em;
 }
 
+.open-call {
+  visibility: visible !important;
+  position: relative;
+}
+.container-open-call {
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.background-element.open-call {
+  position: absolute;
+
+}
 
  ul.top-el {
 /*   font-family:'Helvetica-Regular', sans-serif; */
@@ -745,6 +790,10 @@ a.video-name:hover {
   border-width: .5em 0; /* 0.25em is roughly equal to one space character. */
     -webkit-filter: blur(26px);
   filter: blur(26px);
+}
+.title.open-call {
+  -webkit-filter: blur(56px) !important;
+filter: blur(56px) !important;
 }
 .title:after {
   /* animation: fog 4s ease-out; */

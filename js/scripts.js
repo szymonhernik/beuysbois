@@ -6,7 +6,30 @@ let hoverRect = document.querySelector(".hover-space")
 
 
 if(vid) {
+  // hoverRect
+  vid.addEventListener('loadeddata', function() {
+    hoverRect.addEventListener('click', () => {
+
+
+      if(vid.readyState <= 4) {
+
+        document.body.style.cursor ="wait";
+      }
+      // if(vid.readyState >= 3) {
+      //
+      //   document.body.style.cursor ="pointer";
+      // }
+
+    })
+
+    // if(obj.readyState >= 2) {
+    //   obj.play();
+    // }
+
+
+  });
   vid.addEventListener("canplay", () => {
+
 
 
     //change text of the message if the main, "heavy" video has loaded
@@ -36,20 +59,25 @@ if(vid) {
 
       let waitingTime = 4000;
       if (counter==0) {
+        // document.body.style.cursor ="wait";
         el.addEventListener('ended', myHandler,false);
         function myHandler(e) {
+          // document.body.style.cursor ="pointer";
 
           newEl.classList.toggle("hide");
           newEl.classList.toggle("video-styles");
           el.parentNode.replaceChild(newEl, el);
+          document.body.style.cursor ="pointer";
           setTimeout(showMenu,waitingTime);
 
         }
       } else if (counter==1) {
 
+
         newEl.classList.toggle("hide");
         newEl.classList.toggle("video-styles");
         el.parentNode.replaceChild(newEl, el);
+        document.body.style.cursor ="pointer";
         setTimeout(showMenu,waitingTime);
 
       }
@@ -94,7 +122,9 @@ function run(interval, frames) {
 
 //ABOUT SECTION
 
-
+  if (document.querySelector("section")) {
+    run(7000, 5);
+  }
 
   let sectionAbout = document.getElementById("about-section");
 
