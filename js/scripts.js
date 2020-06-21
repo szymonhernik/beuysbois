@@ -86,7 +86,7 @@ if(vid) {
         document.querySelector('main').style.visibility = "visible";
         document.querySelector('.background-element').classList.add("opacityIn");
         document.querySelector('nav').classList.add("scaleIn");
-        document.querySelector('.banner').classList.add("banner-animation");
+        // document.querySelector('.banner').classList.add("banner-animation");
 
         run(4000, 5);
 
