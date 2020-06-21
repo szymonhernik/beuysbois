@@ -563,6 +563,7 @@ section.about {
   margin: 0 104px;
   padding-bottom: .8em;
   z-index: 1;
+
 }
 
 .link {
@@ -591,9 +592,14 @@ section.about {
 }
 
 .poster {
-
-  width: 70%;
-  margin: 0 auto;
+  position: absolute;
+  top:-5vh;
+  left: 0;
+  display: none;
+  /* right: 0; */
+  max-height:85vh;
+  z-index: 1000000;
+  /* margin: 0 auto; */
 }
 
 .container .row:nth-child(3).about-row {

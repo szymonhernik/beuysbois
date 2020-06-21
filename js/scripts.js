@@ -127,6 +127,27 @@ function run(interval, frames) {
   }
 
   let sectionAbout = document.getElementById("about-section");
+  let sectionOpenCall = document.getElementById("open-call-section")
+
+  if(sectionOpenCall) {
+    document.querySelectorAll("#poster-show").forEach(elem => {
+      elem.addEventListener("mouseover", function (e) {
+        document.querySelector(".poster").style.display="block";
+        // console.log(e.clientX);
+        if(e.clientX>window.innerWidth/2) {
+          document.querySelector(".poster").style.left="50vw";
+        }else {
+          document.querySelector(".poster").style.left=e.clientX+'px';
+        }
+      })
+      elem.addEventListener("mouseout", function () {
+        document.querySelector(".poster").style.display="none";
+      })
+
+    })
+    // document.getElementById("poster-show").
+    // document.getElementById("poster-show").
+  }
 
   if(sectionAbout) {
     console.log("about");
