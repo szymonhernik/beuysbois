@@ -339,6 +339,9 @@ nav.navigation ul {
 .navigation-top li a {
   color: #A5A5A5;
 }
+.navigation-top li a:hover {
+  color: #5c5a5a !important;
+}
 .navigation-top li a.highlight {
   color: #5c5a5a !important;
 }
