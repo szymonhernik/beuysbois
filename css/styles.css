@@ -263,6 +263,7 @@ nav.opacityIn {
   width: 100vw;
   height: 100vh;
   position: absolute;
+  overflow: hidden;
   left: 0;
   top: 0;
   /* background: url(../images/background/sky.jpg) no-repeat center center fixed;
@@ -270,7 +271,7 @@ nav.opacityIn {
   background-size: cover; */
 }
 .background-element img {
-  width: 100vw;
+  min-width: 100vw;
   height: 100vh;
   object-fit: cover;
 }
@@ -303,7 +304,7 @@ main {
   /* -webkit-background-size: cover;
   background-size: cover; */
   visibility: hidden;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   overflow-x: hidden;
 
 }
@@ -440,7 +441,7 @@ nav.navigation ul {
 
 .banner {
   background: white;
-  z-index: 100;
+  z-index: 10000000;
   cursor: pointer;
   position: fixed;
   height: 40px;
@@ -594,8 +595,8 @@ section.about {
 .poster {
   position: absolute;
   top:-5vh;
-  left: 0;
-  display: none;
+  right: 60px;
+  /* display: none; */
   /* right: 0; */
   max-height:85vh;
   z-index: 1000000;
@@ -621,8 +622,20 @@ section.about {
 
 .row-block {
   width: 50%;
+  z-index: 10;
 
   /* justify-content:space-around; */
+}
+.row-block-open-call {
+margin-left: 64px;
+width: 45%;
+
+  /* justify-content:space-around; */
+}
+.open-call-note {
+  position: fixed !important;
+  bottom: 5vh;
+  left: 0;
 }
 .row-block-right {
   text-align: right;
