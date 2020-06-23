@@ -4,65 +4,111 @@ const vid = document.querySelector("#opening-video");
 // This code replaces videos, hides the message
 let hoverRect = document.querySelector(".hover-space")
 
-
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  
+  if(vid) {
+    hoverRect.remove();
+    let el = document.querySelector('#before-loaded')
+    let newEl = document.querySelector('#opening-video')
+    el.remove()
+    newEl.remove();
+    document.querySelector('main').style.visibility = "visible";
+    document.querySelector('.background-element').classList.add("opacityIn");
+    document.querySelector('nav').classList.add("scaleIn");
+    // document.querySelector('.banner').classList.add("banner-animation");
+    run(4000, 5);
+    console.log(document.getElementById("bg-img").src);
+  }
+}
 if(vid) {
-  // hoverRect
-  vid.addEventListener('loadeddata', function() {
-    hoverRect.addEventListener('click', () => {
-
-
-      if(vid.readyState <= 4) {
-
-        document.body.style.cursor ="wait";
-      }
-      // if(vid.readyState >= 3) {
-      //
-      //   document.body.style.cursor ="pointer";
-      // }
-
-    })
-
-    // if(obj.readyState >= 2) {
-    //   obj.play();
-    // }
-
-
-  });
-  vid.addEventListener("canplay", () => {
-
-
-
-    //change text of the message if the main, "heavy" video has loaded
-    // let loadingMessage = document.querySelector('.message');
-    // loadingMessage.innerHTML= "Loaded just hover"
-
+  if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 
     let el = document.querySelector('#before-loaded')
     let newEl = document.querySelector('#opening-video')
+    // let el2 = document.querySelector('#before-loaded-src')
+    // let newEl2 = document.querySelector('#before-loaded-src-main')
+    //
+    // // el2.src= el2.getAttribute("data-src");
+    // // newEl2.src = newEl2.getAttribute("data-src")
+    // console.log(el2.src);
+    // console.log(el2.getAttribute("data-src"));
+
+    // hoverRect
+    vid.addEventListener('loadeddata', function() {
+      hoverRect.addEventListener('click', () => {
 
 
-    let counter = 0;
-    function counterUpdate() {
-      counter ++;
-    }
-    el.addEventListener('ended',counterUpdate,false);
-    // let allSources = document.getElementById("face-vid").src;
+        if(vid.readyState <= 4) {
 
-    hoverRect.addEventListener('mouseover', () => {
-      // el.play();
+          document.body.style.cursor ="wait";
+        }
+        // if(vid.readyState >= 3) {
+        //
+        //   document.body.style.cursor ="pointer";
+        // }
+
+      })
+
+      // if(obj.readyState >= 2) {
+      //   obj.play();
+      // }
+
+
     });
+    vid.addEventListener("loadeddata", () => {
 
-    hoverRect.addEventListener('click', () => {
+      // on click hover rect
+      //   check if loadeddata == true
+      //     // if can play
+      //       when video ended (el.addEventListener('ended', ...);)
+      //         video replace
+      //
+      // (on click: cursor -> wait)
+      //     (when main video can play cursor->pointer)
 
-      hoverRect.classList.toggle("hide");
+
+      //change text of the message if the main, "heavy" video has loaded
+      // let loadingMessage = document.querySelector('.message');
+      // loadingMessage.innerHTML= "Loaded just hover"
 
 
-      let waitingTime = 4000;
-      if (counter==0) {
-        // document.body.style.cursor ="wait";
-        el.addEventListener('ended', myHandler,false);
-        function myHandler(e) {
-          // document.body.style.cursor ="pointer";
+
+
+
+      let counter = 0;
+      function counterUpdate() {
+        counter ++;
+      }
+      el.addEventListener('ended',counterUpdate,false);
+      // let allSources = document.getElementById("face-vid").src;
+
+      hoverRect.addEventListener('mouseover', () => {
+        // el.play();
+      });
+
+      //what if the first video ends but you don't click again
+
+      hoverRect.addEventListener('click', () => {
+
+        hoverRect.classList.toggle("hide");
+
+
+        let waitingTime = 4000;
+        if (counter==0) {
+          // document.body.style.cursor ="wait";
+          el.addEventListener('ended', myHandler,false);
+          function myHandler(e) {
+            // document.body.style.cursor ="pointer";
+
+            newEl.classList.toggle("hide");
+            newEl.classList.toggle("video-styles");
+            el.parentNode.replaceChild(newEl, el);
+            document.body.style.cursor ="pointer";
+            setTimeout(showMenu,waitingTime);
+
+          }
+        } else if (counter==1) {
+
 
           newEl.classList.toggle("hide");
           newEl.classList.toggle("video-styles");
@@ -71,33 +117,24 @@ if(vid) {
           setTimeout(showMenu,waitingTime);
 
         }
-      } else if (counter==1) {
+
+        function showMenu () {
+          document.querySelector('main').style.visibility = "visible";
+          document.querySelector('.background-element').classList.add("opacityIn");
+          document.querySelector('nav').classList.add("scaleIn");
+          // document.querySelector('.banner').classList.add("banner-animation");
+
+          run(4000, 5);
 
 
-        newEl.classList.toggle("hide");
-        newEl.classList.toggle("video-styles");
-        el.parentNode.replaceChild(newEl, el);
-        document.body.style.cursor ="pointer";
-        setTimeout(showMenu,waitingTime);
+          console.log(document.getElementById("bg-img").src);
+        }
 
-      }
+      });
 
-      function showMenu () {
-        document.querySelector('main').style.visibility = "visible";
-        document.querySelector('.background-element').classList.add("opacityIn");
-        document.querySelector('nav').classList.add("scaleIn");
-        // document.querySelector('.banner').classList.add("banner-animation");
-
-        run(4000, 5);
-
-
-        console.log(document.getElementById("bg-img").src);
-      }
 
     });
-
-
-  });
+  }
 }
 
 let bgImages = document.querySelectorAll("#bg-img")
@@ -123,11 +160,22 @@ function run(interval, frames) {
 //ABOUT SECTION
 
   if (document.querySelector("section")) {
-    run(7000, 5);
+
+
+    document.querySelector(".navigation-top").addEventListener("click", () => {
+
+      document.querySelectorAll(".element").forEach(element => {
+        element.classList.toggle("logoOpen")
+      })
+      console.log("clicked");
+      document.querySelector(".banner").classList.toggle("active")
+      document.querySelector(".navigation-top ul").classList.toggle("active")
+    })
   }
 
   let sectionAbout = document.getElementById("about-section");
   let sectionOpenCall = document.getElementById("open-call-section")
+  let sectionArchive = document.getElementById("archive-section")
 
   if(sectionOpenCall) {
     // document.querySelectorAll("#poster-show").forEach(elem => {
@@ -148,8 +196,12 @@ function run(interval, frames) {
     // document.getElementById("poster-show").
     // document.getElementById("poster-show").
   }
+  if(sectionArchive) {
+    run(7000, 5);
+  }
 
   if(sectionAbout) {
+
     console.log("about");
 
     document.querySelector('.banner').classList.add("banner-animation");
