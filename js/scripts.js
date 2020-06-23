@@ -1,17 +1,20 @@
+const home = document.querySelector(".home");
 const vid = document.querySelector("#opening-video");
 
 // Execute this after the main, "heavy" video is loaded
 // This code replaces videos, hides the message
 let hoverRect = document.querySelector(".hover-space")
 
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  
-  if(vid) {
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || home ) {
+
+  if(home) {
     hoverRect.remove();
     let el = document.querySelector('#before-loaded')
     let newEl = document.querySelector('#opening-video')
-    el.remove()
-    newEl.remove();
+    if(el && newEl) {
+      el.remove()
+      newEl.remove();
+    }
     document.querySelector('main').style.visibility = "visible";
     document.querySelector('.background-element').classList.add("opacityIn");
     document.querySelector('nav').classList.add("scaleIn");
@@ -103,7 +106,7 @@ if(vid) {
             newEl.classList.toggle("hide");
             newEl.classList.toggle("video-styles");
             el.parentNode.replaceChild(newEl, el);
-            document.body.style.cursor ="pointer";
+            document.body.style.cursor ="default";
             setTimeout(showMenu,waitingTime);
 
           }
@@ -113,7 +116,7 @@ if(vid) {
           newEl.classList.toggle("hide");
           newEl.classList.toggle("video-styles");
           el.parentNode.replaceChild(newEl, el);
-          document.body.style.cursor ="pointer";
+          document.body.style.cursor ="default";
           setTimeout(showMenu,waitingTime);
 
         }

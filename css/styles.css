@@ -38,6 +38,14 @@ a, ul li{
   /* margin-right: 0 5px; */
 }
 
+body nav a {
+  cursor: pointer;
+}
+
+.banner-first img {
+  cursor: default;
+}
+
 
 .hover-space {
   z-index: 100000000000;
@@ -433,7 +441,7 @@ nav.navigation ul {
   justify-content: center; */
 }
 .banner-first img {
-  animation: moveSlideshow 6s linear 1;
+  animation: moveSlideshow 8s linear infinite;
   padding-top: 6px;
   height: 80%;
 }
