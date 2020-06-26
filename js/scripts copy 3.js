@@ -34,6 +34,8 @@ if (vid) {
 
     let el = document.querySelector('#before-loaded')
     let newEl = document.querySelector('#opening-video')
+    // let count = 0;
+    // let counterEndedVideo = 0;
 
     vid.addEventListener('loadeddata', function() {
       hoverRect.addEventListener('click', () => {
@@ -47,15 +49,47 @@ if (vid) {
 
 
     });
+    // newEl.addEventListener("canplaythrough", () => {
+    //   count ++;
+    // })
+    // el.addEventListener('ended', function() {
+    //   counterEndedVideo ++;
+    //
+    // });
     // hoverRect.addEventListener('click', () => {
+    //
+    //
     //   document.body.style.cursor = "wait";
-    //   vid.addEventListener("canplaythrough", () => {
+    //   hoverRect.classList.toggle("hide");
+    //   if(count>0) {
+    //     console.log("already oooop");
     //     document.body.style.cursor = "default";
     //     el.addEventListener('ended', function() {
+    //       setTimeout(defaultAction, 200);
     //
     //     });
+    //   }
+    //   if (count>0) {}
+    //   newEl.addEventListener("canplaythrough", () => {
+    //     console.log("OOOOOP");
+    //     document.body.style.cursor = "default";
+    //     if (counterEndedVideo>0) {
+    //       setTimeout(defaultAction, 200);
+    //     }
+    //     // el.addEventListener('ended', function() {
+    //     //
+    //     //   setTimeout(defaultAction, 200);
+    //     //
+    //     // });
     //   })
     // })
+
+    // function defaultAction () {
+    //   newEl.classList.toggle("not-visible");
+    //   newEl.classList.toggle("video-styles");
+    //   el.parentNode.replaceChild(newEl, el);
+    //   setTimeout(showMenu, 3000);
+    // }
 
     // on click hover rect
     //   check if loadeddata == true
@@ -114,16 +148,7 @@ if (vid) {
 
         }
 
-        function showMenu() {
-          document.querySelector('main').style.visibility = "visible";
-          document.querySelector('.background-element').classList.add("opacityIn");
-          document.querySelector('nav').classList.add("scaleIn");
 
-          run(4000, 5);
-
-
-          console.log(document.getElementById("bg-img").src);
-        }
 
       });
 
@@ -220,6 +245,11 @@ if (sectionAbout) {
   })
 
 }
+
+
+
+
+// FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS
 window.smoothScroll = function(target) {
   var scrollContainer = target;
   do { //find scroll container
@@ -246,7 +276,25 @@ window.smoothScroll = function(target) {
   scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 
+
+
+
+function showMenu() {
+  document.querySelector('main').style.visibility = "visible";
+  document.querySelector('.background-element').classList.add("opacityIn");
+  document.querySelector('nav').classList.add("scaleIn");
+
+  run(4000, 5);
+
+
+  console.log(document.getElementById("bg-img").src);
+}
+
+
+
 let videoNames = document.querySelectorAll("#video-name")
+
+
 
 function changeVideo(a) {
   videoName.src = a;
