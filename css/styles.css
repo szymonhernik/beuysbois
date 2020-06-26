@@ -666,7 +666,12 @@ width: 45%;
   color: #A5A5A5;
   letter-spacing: .03em;
 }
-
+main.open-call {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  
+}
 .open-call {
   visibility: visible !important;
   position: relative;
