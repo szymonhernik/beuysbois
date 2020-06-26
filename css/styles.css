@@ -1000,7 +1000,7 @@ filter: blur(56px) !important;
     width: 100% !important;
   }
   .row-block.moving.title.open-call:last-child {
-    margin-bottom:  150px !important;
+    /* margin-bottom:  150px !important; */
   }
 
   .only-mobile {
