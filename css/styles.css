@@ -926,7 +926,7 @@ filter: blur(56px) !important;
     left: 20px !important;
   }
   .container .row {
-    margin: 0 20px;
+    margin: 40px 20px;
   }
   .container {
     max-width: 100vw !important;
@@ -935,10 +935,11 @@ filter: blur(56px) !important;
   }
   .container.blured {
     margin-top: 50px !important;
+    padding-bottom: 100px;
   }
   .container .row:nth-child(3).about-row {
     margin-top: 18vh;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
   .faces {
     height: 80vh;
@@ -959,14 +960,15 @@ filter: blur(56px) !important;
 
   }
   .row-block-open-call {
-    margin: 20px 20px;
+    margin: 40px 20px;
     order:4;
     width: calc(100% - 40px);
     /* width: 100%; */
   }
   .row-block-open-call:first-child {
     order:1 !important;
-      margin-bottom: 8vh;
+    /* margin: 30px; */
+      margin: 40px 20px;
   }
 
 
