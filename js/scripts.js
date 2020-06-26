@@ -5,9 +5,9 @@ const vid = document.querySelector("#opening-video");
 // This code replaces videos, hides the message
 let hoverRect = document.querySelector(".hover-space")
 
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || home ) {
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || hoverRect ) {
 
-  if(home) {
+  if(hoverRect) {
     hoverRect.remove();
     let el = document.querySelector('#before-loaded')
     let newEl = document.querySelector('#opening-video')
