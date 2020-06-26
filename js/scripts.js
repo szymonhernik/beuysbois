@@ -35,6 +35,7 @@ if (vid) {
     let el = document.querySelector('#before-loaded')
     let newEl = document.querySelector('#opening-video')
     let count = 0;
+    let counterEndedVideo = 0;
 
     // vid.addEventListener('loadeddata', function() {
     //   hoverRect.addEventListener('click', () => {
@@ -51,6 +52,10 @@ if (vid) {
     newEl.addEventListener("canplaythrough", () => {
       count ++;
     })
+    el.addEventListener('ended', function() {
+      counterEndedVideo ++;
+
+    });
     hoverRect.addEventListener('click', () => {
 
 
@@ -64,14 +69,17 @@ if (vid) {
 
         });
       }
-      newEl.addEventListener("loadeddata", () => {
+      newEl.addEventListener("canplaythrough", () => {
         console.log("OOOOOP");
         document.body.style.cursor = "default";
-        el.addEventListener('ended', function() {
-
+        if (counterEndedVideo>0) {
           setTimeout(defaultAction, 200);
-
-        });
+        }
+        // el.addEventListener('ended', function() {
+        //
+        //   setTimeout(defaultAction, 200);
+        //
+        // });
       })
     })
 
