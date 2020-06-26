@@ -933,6 +933,9 @@ filter: blur(56px) !important;
     overflow-x: hidden !important;
 
   }
+  .container.blured {
+    margin-top: 50px !important;
+  }
   .container .row:nth-child(3).about-row {
     margin-top: 18vh;
     margin-bottom: 0;
@@ -995,6 +998,9 @@ filter: blur(56px) !important;
   }
   .row.moving.title.open-call:nth-child(2) {
     width: 100% !important;
+  }
+  .row-block.moving.title.open-call:last-child {
+    margin-bottom:  150px !important;
   }
 
   .only-mobile {
