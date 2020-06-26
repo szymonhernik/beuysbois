@@ -901,7 +901,7 @@ filter: blur(56px) !important;
     height: 35px;
   }
   .banner.active {
-    height: 70vh;
+    height: 76vh;
     align-items: flex-start;
     padding-top: 3px;
   }
@@ -911,7 +911,7 @@ filter: blur(56px) !important;
   .navigation-top ul {
     /* background-color: white; */
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 60px;
     display: none;
     /* box-shadow: -4px 1px 6px -6px lightgrey; */
   }
