@@ -60,8 +60,7 @@ if (vid) {
         console.log("already oooop");
         document.body.style.cursor = "default";
         el.addEventListener('ended', function() {
-
-          defaultAction ();
+          setTimeout(defaultAction, 200);
 
         });
       }
@@ -70,7 +69,7 @@ if (vid) {
         document.body.style.cursor = "default";
         el.addEventListener('ended', function() {
 
-          defaultAction ();
+          setTimeout(defaultAction, 200);
 
         });
       })
