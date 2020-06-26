@@ -9,8 +9,8 @@ const hoverRect = document.querySelector(".hover-space")
 
 
 // DETECT MOBILE FOR MAIN PAGE
-//IF MOBILE: remove video elements
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || home) {
+//IF MOBILE: remove video elements 
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || hoverRect) {
 
   if (hoverRect) {
     hoverRect.remove();
@@ -27,125 +27,88 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     console.log(document.getElementById("bg-img").src);
   }
 }
-// DESKTOP, IF OPENING PAGE
-// CHANGE CURSOR TO WAIT BEFORE THE VIDEO IS ABLE TO PLAY
 if (vid) {
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 
     let el = document.querySelector('#before-loaded')
     let newEl = document.querySelector('#opening-video')
-    let count = 0;
 
-    // vid.addEventListener('loadeddata', function() {
-    //   hoverRect.addEventListener('click', () => {
-    //
-    //
-    //     if (vid.readyState <= 4) {
-    //       document.body.style.cursor = "wait";
-    //     }
-    //
-    //   })
-    //
-    //
-    // });
-    newEl.addEventListener("canplaythrough", () => {
-      count ++;
-    })
-    hoverRect.addEventListener('click', () => {
+    vid.addEventListener('loadeddata', function() {
+      hoverRect.addEventListener('click', () => {
 
 
-      document.body.style.cursor = "wait";
-      hoverRect.classList.toggle("hide");
-      if(count>0) {
-        console.log("already oooop");
-        document.body.style.cursor = "default";
-        el.addEventListener('ended', function() {
+        if (vid.readyState <= 4) {
+          document.body.style.cursor = "wait";
+        }
 
-          defaultAction ();
-
-        });
-      }
-      newEl.addEventListener("loadeddata", () => {
-        console.log("OOOOOP");
-        document.body.style.cursor = "default";
-        el.addEventListener('ended', function() {
-
-          defaultAction ();
-
-        });
       })
-    })
 
-    function defaultAction () {
-      newEl.classList.toggle("not-visible");
-      newEl.classList.toggle("video-styles");
-      el.parentNode.replaceChild(newEl, el);
-      setTimeout(showMenu, 3000);
-    }
 
-    // on click hover rect
-    //   check if loadeddata == true
-    //     // if can play
-    //       when video ended (el.addEventListener('ended', ...);)
-    //         video replace
-    //
-    // (on click: cursor -> wait)
-    //     (when main video can play cursor->pointer)
+    });
+    vid.addEventListener("loadeddata", () => {
 
 
 
-    // vid.addEventListener("loadeddata", () => {
-    //
-    //
-    //   let counter = 0;
-    //
-    //   function counterUpdate() {
-    //     counter++;
-    //   }
-    //   el.addEventListener('ended', counterUpdate, false);
-    //   // let allSources = document.getElementById("face-vid").src;
-    //
-    //
-    //
-    //   //what if the first video ends but you don't click again
-    //
-    //   hoverRect.addEventListener('click', () => {
-    //
-    //     hoverRect.classList.toggle("hide");
-    //
-    //
-    //     let waitingTime = 4000;
-    //     if (counter == 0) {
-    //       // document.body.style.cursor ="wait";
-    //       el.addEventListener('ended', myHandler, false);
-    //
-    //       function myHandler(e) {
-    //         // document.body.style.cursor ="pointer";
-    //
-    //         newEl.classList.toggle("hide");
-    //         newEl.classList.toggle("video-styles");
-    //         el.parentNode.replaceChild(newEl, el);
-    //         document.body.style.cursor = "default";
-    //         setTimeout(showMenu, waitingTime);
-    //
-    //       }
-    //     } else if (counter == 1) {
-    //
-    //
-    //       newEl.classList.toggle("hide");
-    //       newEl.classList.toggle("video-styles");
-    //       el.parentNode.replaceChild(newEl, el);
-    //       document.body.style.cursor = "default";
-    //       setTimeout(showMenu, waitingTime);
-    //
-    //     }
-    //
-    //
-    //
-    //   });
-    //
-    //
-    // });
+      let counter = 0;
+
+      function counterUpdate() {
+        counter++;
+      }
+      el.addEventListener('ended', counterUpdate, false);
+      // let allSources = document.getElementById("face-vid").src;
+
+      hoverRect.addEventListener('mouseover', () => {
+        // el.play();
+      });
+
+      //what if the first video ends but you don't click again
+
+      hoverRect.addEventListener('click', () => {
+
+        hoverRect.classList.toggle("hide");
+
+
+        let waitingTime = 4000;
+        if (counter == 0) {
+          // document.body.style.cursor ="wait";
+          el.addEventListener('ended', myHandler, false);
+
+          function myHandler(e) {
+            // document.body.style.cursor ="pointer";
+
+            newEl.classList.toggle("hide");
+            newEl.classList.toggle("video-styles");
+            el.parentNode.replaceChild(newEl, el);
+            document.body.style.cursor = "default";
+            setTimeout(showMenu, waitingTime);
+
+          }
+        } else if (counter == 1) {
+
+
+          newEl.classList.toggle("hide");
+          newEl.classList.toggle("video-styles");
+          el.parentNode.replaceChild(newEl, el);
+          document.body.style.cursor = "default";
+          setTimeout(showMenu, waitingTime);
+
+        }
+
+        function showMenu() {
+          document.querySelector('main').style.visibility = "visible";
+          document.querySelector('.background-element').classList.add("opacityIn");
+          document.querySelector('nav').classList.add("scaleIn");
+
+          run(4000, 5);
+
+
+          console.log(document.getElementById("bg-img").src);
+        }
+
+      });
+
+
+    });
   }
 }
 
@@ -237,11 +200,6 @@ if (sectionAbout) {
   })
 
 }
-
-
-
-
-// FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS
 window.smoothScroll = function(target) {
   var scrollContainer = target;
   do { //find scroll container
@@ -268,25 +226,7 @@ window.smoothScroll = function(target) {
   scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 
-
-
-
-function showMenu() {
-  document.querySelector('main').style.visibility = "visible";
-  document.querySelector('.background-element').classList.add("opacityIn");
-  document.querySelector('nav').classList.add("scaleIn");
-
-  run(4000, 5);
-
-
-  console.log(document.getElementById("bg-img").src);
-}
-
-
-
 let videoNames = document.querySelectorAll("#video-name")
-
-
 
 function changeVideo(a) {
   videoName.src = a;
