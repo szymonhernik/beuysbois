@@ -670,7 +670,7 @@ main.open-call {
   position: fixed !important;
   top: 0;
   left: 0;
-  
+
 }
 .open-call {
   visibility: visible !important;
@@ -931,6 +931,9 @@ filter: blur(56px) !important;
     left: 20px !important;
   }
   .container .row {
+    margin: 10px 20px;
+  }
+  .container .row.title {
     margin: 40px 20px;
   }
   .container {
