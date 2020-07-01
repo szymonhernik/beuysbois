@@ -434,6 +434,10 @@ nav.navigation ul {
         transform: scale(1,1);
     }
 } */
+
+.container.blured {
+  /* background-color: #e5e5ec !important; */
+}
 .banner-first {
   z-index: 100;
   cursor: pointer;
@@ -681,10 +685,9 @@ main.open-call {
   top:0;
   left: 0;
 }
-.background-element.open-call {
+/* .background-element.open-call {
   position: absolute;
-
-}
+} */
 
  ul.top-el {
 /*   font-family:'Helvetica-Regular', sans-serif; */
@@ -944,6 +947,7 @@ filter: blur(56px) !important;
   .container.blured {
     margin-top: 50px !important;
     padding-bottom: 100px;
+
   }
   .container .row:nth-child(3).about-row {
     margin-top: 18vh;
