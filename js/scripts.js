@@ -174,11 +174,12 @@ if (document.querySelector("section")) {
 let sectionAbout = document.getElementById("about-section");
 let sectionOpenCall = document.getElementById("open-call-section")
 let sectionArchive = document.getElementById("archive-section")
+let sectionFood = document.getElementById("food-section")
 
 if (sectionOpenCall) {
 
 }
-if (sectionArchive) {
+if (sectionArchive || sectionFood) {
   run(7000, 5);
 }
 
