@@ -957,6 +957,18 @@ filter: blur(56px) !important;
   display: none;
 }
 
+.food-section .container.blured {
+  display: block !important;
+
+}
+main.food {
+  display: none;
+
+}
+.food-section {
+  background-color: lavender !important;
+}
+
 
 @media only screen and (max-width: 600px) {
   .navigation-top ul li{
