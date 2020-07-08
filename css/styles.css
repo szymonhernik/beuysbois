@@ -1014,6 +1014,18 @@ filter: blur(56px) !important;
     padding-bottom: 100px;
 
   }
+  .food-section .container.blured {
+    display: none !important;
+
+  }
+  main.food {
+    display: none;
+
+  }
+  .food-section {
+    background-color: whitesmoke !important;
+  }
+
   .container .row:nth-child(3).about-row {
     margin-top: 18vh;
     margin-bottom: 20px;
