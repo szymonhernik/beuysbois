@@ -900,7 +900,7 @@ filter: blur(56px) !important;
   filter: blur(56px) !important; */
   -webkit-filter: blur(45px) !important;
   filter: blur(45px) !important;
-  border-width: 3.8em 0;
+  border-width: 1.8em 0;
 }
 .title:after {
   /* animation: fog 4s ease-out; */
