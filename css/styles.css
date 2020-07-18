@@ -422,7 +422,7 @@ nav.navigation ul {
 /* B————————A————————N————————N————————E————————R */
 @keyframes moveSlideshow {
   100% {
-    transform: translateX(-280.6666%);
+    transform: translateX(-340.6666%);
   }
 }
 /* @keyframes banner {
@@ -508,7 +508,7 @@ section.food-section {
   justify-content: center; */
 }
 .banner-first img {
-  animation: moveSlideshow 8s linear infinite;
+  animation: moveSlideshow 9s linear infinite;
   padding-top: 6px;
   height: 80%;
 }
