@@ -1160,6 +1160,10 @@ main.food {
     align-items: flex-start;
   }
 
+  .container.container-events {
+    margin-left: 0;
+  }
+
   .event-title h1 {
     font-size: 1.7rem;
   }
