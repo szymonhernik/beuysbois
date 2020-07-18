@@ -632,7 +632,7 @@ section.about {
   color: black;
 }
 .container-events h1 {
-  font-family: Concert;
+  font-family: Concert, sans-serif;
   letter-spacing: .1em;
   font-size: 2.8rem;
   margin-bottom: 20px;
