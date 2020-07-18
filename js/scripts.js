@@ -135,7 +135,7 @@ if (vid) {
 let bgImages = document.querySelectorAll("#bg-img")
 let arrayBgImages = Array.from(bgImages)
 
-console.log(arrayBgImages);
+// console.log(arrayBgImages);
 
 function run(interval, frames) {
   var int = 2;
@@ -171,10 +171,126 @@ if (document.querySelector("section")) {
   })
 }
 
+
+
 let sectionAbout = document.getElementById("about-section");
 let sectionOpenCall = document.getElementById("open-call-section")
 let sectionArchive = document.getElementById("archive-section")
 let sectionFood = document.getElementById("food-section")
+let sectionEvents = document.getElementById("events-section")
+
+
+
+
+if (sectionEvents) {
+//   var COL_COUNT = 2; // set this to however many columns you want
+// var col_heights = [],
+//     container = document.getElementById('block-contain');
+// for (var i = 0; i <= COL_COUNT; i++) {
+//   col_heights.push(0);
+// }
+// for (var i = 0; i < container.children.length; i++) {
+//   var order = (i + 1) % COL_COUNT || COL_COUNT;
+//   container.children[i].style.order = order;
+//   col_heights[order] += parseFloat(container.children[i].style.height);
+// }
+// var highest = Math.max.apply(Math, col_heights);
+// container.style.height = highest+'px';
+
+  let eventsElements = document.querySelectorAll("ul.events-list")
+  let eventsMore = document.querySelectorAll("div.event-more")
+  let arrayFromEventsElements = Array.from(eventsElements)
+  console.log(arrayFromEventsElements);
+  for (let i = 0; i <arrayFromEventsElements.length; i++) {
+    arrayFromEventsElements[i].addEventListener("click", function (event) {
+      console.log(i);
+      // if (){
+      //   return;
+      // } else {
+        eventsElements.forEach(element => {
+          element.classList.remove("underline")
+        })
+        eventsElements[i].classList.add("underline")
+        eventsMore.forEach(eventElement => {
+          eventElement.classList.add("hidden")
+        })
+        eventsMore[i].classList.remove("hidden")
+      // }
+
+    })
+  }
+
+  // arrayFromEventsElements.forEach(function(element) {
+  //   element.addEventListener("click", function (event) {
+  //     console.log(arrayFromEventsElements.indexOf(event.target));
+  //   })
+  // })
+
+
+
+  // arrayFromEventsElements.forEach(eventElement => {
+  //   eventElement.addEventListener("click", function (event) {
+  //
+  //     console.log(eventElement.indexOf(event.target));
+  //
+  //     // if (!eventElement.nextSibling.nextSibling.classList.contains("hidden")) {
+  //     //   return;
+  //     // }
+  //     // else {
+  //     //   eventsElements.forEach(element => {
+  //     //     element.nextSibling.nextSibling.classList.add("hidden")
+  //     //     element.classList.remove("underline")
+  //     //   })
+  //     //   eventElement.classList.add("underline")
+  //     //   eventElement.nextSibling.nextSibling.classList.toggle("hidden")
+  //     // }
+  //
+  //   })
+  // })
+
+  // let last_known_scroll_position = 0;
+  //
+  //
+
+  // let eventsBlocks = document.querySelectorAll(".event-block")
+  // // console.log(eventsElements[0]);
+  //
+  // //put values Y to the variables
+  // // navBar.classList[window.scrollY > whenToSlide ? 'add' : 'remove']('hide')
+  //
+  // let valuesYEventsBlocks = []
+  // // eventsBlocks.forEach(eventBlock => {
+  // //   let yPositionOfBlock = eventBlock.getBoundingClientRect()
+  // //   valuesYEventsBlocks.push(yPositionOfBlock.top)
+  // // })
+  // console.log(valuesYEventsBlocks);
+  // if (last_known_scroll_position==0) {
+  //   eventsElements[0].childNodes[3].classList.add("underline");
+  // }
+  //
+  // //on scroll
+  // //check if eventBlock y value is > window.scrollY
+  //
+  // //check how many elements there is
+  // //
+  // window.addEventListener('scroll', function(e) {
+  //   // last_known_scroll_position = window.scrollY;
+  //   eventsBlocks.forEach(eventBlock => {
+  //
+  //     let yPositionOfBlock = eventBlock.getBoundingClientRect()
+  //     valuesYEventsBlocks.push(yPositionOfBlock.top)
+  //     if (window.scrollY > yPositionOfBlock.top) {
+  //
+  //     }
+  //   })
+  //
+  //   // console.log(last_known_scroll_position);
+  //
+  // });
+}
+
+
+
 
 if (sectionOpenCall) {
 

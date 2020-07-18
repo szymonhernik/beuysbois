@@ -26,6 +26,7 @@
   font-size: 1em;
   letter-spacing: 0;
   font-family: acumin-pro, sans-serif;
+  box-sizing: border-box;
 }
 
 a, ul {
@@ -288,6 +289,7 @@ nav.opacityIn {
   height: 100vh;
   object-fit: cover;
 }
+
 #b1 {
 
 
@@ -615,6 +617,144 @@ section.about {
 
 
 }
+.container-events img {
+  /* margin-left: 10vw;
+  width: 80% !important;
+  height: auto !important; */
+}
+
+.container.container-events {
+  margin-top: 0;
+  padding-top: 80px !important;
+  /* display: flex;
+  flex-direction: row; */
+  margin-left: 5vw;
+  color: black;
+}
+.container-events h1 {
+  font-family: Concert;
+  letter-spacing: .1em;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+.container-events p {
+  width: 100%;
+  letter-spacing: .02em;
+  line-height: 1.2em;
+  font-weight: 200;
+  font-size: 1.1rem;
+  color: #6a6870 !important;
+}
+.container-events ul li {
+  line-height: 1.2em;
+  font-weight: 200;
+  font-size: 1.1rem;
+  color: #6a6870 !important;
+}
+.container-events ul {
+  cursor: pointer;
+  margin: 20px 0;
+}
+.container-events ul li:nth-child(2) {
+  margin-left: 40px;
+}
+.container-events .events-list {
+  /* position: fixed; */
+}
+.container-events .event-block {
+  position: relative;
+}
+.event-images {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+
+}
+.event-images img {
+  /* margin: 5px; */
+  margin-bottom: 8px;
+  width: 100%;
+  height: auto;
+}
+.event-images .portrait-images {
+  width: 40%;
+}
+.event-images {
+  margin-top: 30px;
+}
+.event-images .horizontal-images {
+  width: 58%;
+}
+
+.events-section {
+  /* background-color: #cdcdf3; */
+  background-color: lavender;
+  /* background-color: blue; */
+}
+.events-section .container.blured {
+  background-color: lavender;
+}
+.events-section .title.open-call{
+  filter: blur(66px) !important;
+}
+.events-section .row.moving.title.open-call:nth-child(4){
+  filter: blur(10px) !important;
+}
+.events-section .row.moving.title.open-call:nth-child(3){
+  margin-top: 0 !important;
+}
+.events-section .container.blured .row {
+  z-index: 0;
+}
+.container-events .events {
+  /* position: relative; */
+    /* background-color: yellow; */
+}
+.events-left {
+  width: 23vw;
+  position: fixed;
+  top: 80px;
+  left:4vw;
+}
+.events-right {
+  margin-left: 23vw;
+  width: 65vw;
+  padding-right: 0vw;
+  /* height: 50vh; */
+}
+.events {
+  /* width: 90vw; */
+}
+.events-list {
+  width: 20vw;
+  /* height: 50vh; */
+}
+.event-block {
+  width: 100%;
+
+}
+.event-more {
+  /* position: absolute;
+  right: 0;
+  top: 0;
+  width: 70%; */
+}
+.event-more span.date {
+  line-height: 1.2em !important;
+  font-weight: 200 !important;
+  font-size: 1rem !important;
+  color: #6a6870 !important;
+}
+.event-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.event-title span {
+  display: none;
+}
+
+
 .container .top-el a {
   font-size: 1.2em;
   color: #beb5c2;
@@ -656,6 +796,12 @@ section.about {
 }
 .container .moving {
 
+}
+.underline li:nth-child(2){
+  text-decoration: underline;
+}
+ul.events-list:hover li:nth-child(2){
+  text-decoration: underline;
 }
 
 .section-bg {
@@ -970,7 +1116,53 @@ main.food {
 }
 
 
+@media (max-width: 922px) {
+  .events-left {
+    position: relative;
+    width: 100vw;
+    top: 0;
+    left: 0;
+  }
+  .container.container-events {
+    padding: 0 4vw;
+  }
+  .events-list {
+    width: 100%;
+
+  }
+
+
+
+  .event-title span {
+    display: block;
+  }
+  .events-right {
+    width: 90vw;
+    margin-left: 0;
+  }
+}
+
 @media only screen and (max-width: 600px) {
+  .event-images {
+
+    flex-direction: column;
+
+  }
+  .event-images .portrait-images {
+    width: 100%;
+  }
+  .event-images .horizontal-images {
+    width: 100%;
+  }
+  .event-title {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .event-title h1 {
+    font-size: 1.7rem;
+  }
   .navigation-top ul li{
     margin: 6px 0;
   }
@@ -1037,6 +1229,8 @@ main.food {
   .food-section {
     background-color: whitesmoke !important;
   }
+
+
 
   .container .row:nth-child(3).about-row {
     margin-top: 18vh;
