@@ -165,10 +165,11 @@ if (sectionEvents) {
 if (sectionOpenCall) {
 
   let openCalls = document.querySelectorAll("#block-event")
+  let openCallsPosters = document.querySelectorAll("#poster")
   let openCallsMore = document.querySelectorAll(".extra-info")
   let openCallsMorePoster = document.querySelectorAll("#poster")
   let arrayFromOpenCallsElements = Array.from(openCalls)
-  
+
   for (let i = 0; i < arrayFromOpenCallsElements.length; i++) {
     arrayFromOpenCallsElements[i].addEventListener("click", function(event) {
       console.log(i);
@@ -182,8 +183,12 @@ if (sectionOpenCall) {
       openCallsMorePoster.forEach(eventElement => {
         eventElement.classList.add("hidden")
       })
+      openCallsPosters.forEach(eventElement => {
+        eventElement.classList.add("hidden")
+      })
       openCallsMorePoster[i].classList.remove("hidden")
       openCallsMore[i].classList.remove("hidden")
+      openCallsPosters[i].classList.remove("hidden")
     })
   }
 

@@ -774,6 +774,10 @@ section.about {
   font-style: italic;
 }
 
+.container-events video {
+  width: 100%;
+}
+
 .container .row {
   /* width: 100%; */
   margin: 0 104px;
