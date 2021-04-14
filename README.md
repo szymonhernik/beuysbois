@@ -1,1 +1,1 @@
-Files for the website [beuysboys](https://beuysboys.nl)
+Files for the website [beuysbois](https://beuysbois.nl)
