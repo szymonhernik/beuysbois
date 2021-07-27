@@ -613,10 +613,16 @@ section.about {
   flex-direction: column;
 
   color: white;
-
-
-
 }
+
+.individual-intro{
+  /* text-align: center; */
+  font-size: 1.2rem;
+  margin-left: 15%;
+  margin-right: 30%;
+  color:#A5A5A5;
+}
+
 .container-events img {
   /* margin-left: 10vw;
   width: 80% !important;
@@ -1165,6 +1171,13 @@ main.food {
   }
 }
 @media only screen and (max-width: 600px) {
+  .individual-intro{
+    /* text-align: center; */
+    font-size: 0.8rem;
+    margin-left: 12%;
+    margin-right: 2%;
+    color:#A5A5A5;
+  }
   .event-images {
 
     flex-direction: column;
